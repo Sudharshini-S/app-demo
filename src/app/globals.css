@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f7fc;
+  --foreground: #1f2937;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --card: #ffffff;
 }
 
 @theme inline {
@@ -12,15 +15,95 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+main {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 25px;
+}
+
+h2 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #374151;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 16px;
+  resize: none;
+  outline: none;
+  transition: 0.3s;
+}
+
+textarea:focus {
+  border-color: var(--primary);
+}
+
+button {
+  margin-top: 15px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 15px;
+}
+
+button:hover {
+  background: var(--primary-hover);
+}
+
+.note-card {
+  background: #f9fafb;
+  border-left: 5px solid var(--primary);
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.note-card p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.delete-btn {
+  background: #ef4444;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+.empty-message {
+  color: #6b7280;
+  font-style: italic;
+  margin-top: 10px;
 }
