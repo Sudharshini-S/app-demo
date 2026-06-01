@@ -19,31 +19,36 @@ export default function NotesPage() {
 
   return (
     <main>
-      <h1>📝 Quick Notes</h1>
+      <h1>📝 Notes</h1>
 
-      <textarea
-        rows="4"
-        placeholder="Write a note..."
-        value={note}
-        onChange={(e) => setNote(e.target.value)}
-      />
+      <div className="input-section">
+        <textarea
+          placeholder="Write your note here..."
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+        />
 
-      <button onClick={addNote}>Save Note</button>
+        <button className="add-btn" onClick={addNote}>
+          + Add
+        </button>
+      </div>
 
-      <h2>Saved Notes</h2>
+      <h2 className="saved-title">Saved Notes</h2>
 
       {notes.length === 0 ? (
-        <p className="empty-message">No notes added yet.</p>
+        <p className="empty-message">
+          No notes available.
+        </p>
       ) : (
         notes.map((item, index) => (
           <div className="note-card" key={index}>
-            <p>{item}</p>
+            <span>{item}</span>
 
             <button
               className="delete-btn"
               onClick={() => removeNote(index)}
             >
-              Delete Note
+              🗑
             </button>
           </div>
         ))

@@ -1,11 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4f7fc;
-  --foreground: #1f2937;
-  --primary: #4f46e5;
-  --primary-hover: #4338ca;
-  --card: #ffffff;
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -22,88 +19,157 @@
 }
 
 body {
-  background: linear-gradient(135deg, #eef2ff, #f8fafc);
-  color: var(--foreground);
+  background: #000000;
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
+
   min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
-  max-width: 700px;
-  margin: 50px auto;
-  padding: 30px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 750px;
+
+  background: #181818;
+
+  padding: 35px;
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 0 20px rgba(59, 130, 246, 0.2),
+    0 0 40px rgba(59, 130, 246, 0.1);
 }
 
 h1 {
   text-align: center;
-  color: var(--primary);
+  color: white;
+  font-size: 2.4rem;
   margin-bottom: 25px;
 }
 
-h2 {
-  margin-top: 30px;
+.saved-title {
+  text-align: center;
+  color: #d1d5db;
+  margin-top: 25px;
   margin-bottom: 15px;
-  color: #374151;
+  font-size: 1.3rem;
+}
+
+.input-section {
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 
 textarea {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid #d1d5db;
-  border-radius: 10px;
-  font-size: 16px;
-  resize: none;
-  outline: none;
-  transition: 0.3s;
-}
+  flex: 1;
 
-textarea:focus {
-  border-color: var(--primary);
-}
+  height: 65px;
 
-button {
-  margin-top: 15px;
-  background: var(--primary);
+  background: #2b2b2b;
   color: white;
+
   border: none;
-  padding: 12px 18px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: 15px;
+  outline: none;
+
+  border-radius: 15px;
+
+  padding: 18px;
+
+  resize: none;
+
+  font-size: 16px;
 }
 
-button:hover {
-  background: var(--primary-hover);
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+.add-btn {
+  height: 65px;
+
+  padding: 0 24px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  background: linear-gradient(
+    135deg,
+    #00bfff,
+    #2563eb
+  );
+
+  color: white;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  transform: scale(1.05);
 }
 
 .note-card {
-  background: #f9fafb;
-  border-left: 5px solid var(--primary);
-  padding: 15px;
+  background: #2b2b2b;
+
   margin-top: 15px;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+
+  padding: 18px 20px;
+
+  border-radius: 18px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.note-card p {
-  margin-bottom: 10px;
-  line-height: 1.5;
+.note-card span {
+  color: white;
+  font-size: 17px;
 }
 
 .delete-btn {
-  background: #ef4444;
+  width: 50px;
+  height: 50px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: #ff4d6d;
+
+  color: white;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 0;
+
+  transition: 0.3s;
 }
 
 .delete-btn:hover {
-  background: #dc2626;
+  background: #ff3355;
+  transform: scale(1.05);
 }
 
 .empty-message {
-  color: #6b7280;
-  font-style: italic;
-  margin-top: 10px;
+  text-align: center;
+  color: #9ca3af;
+  margin-top: 20px;
 }
